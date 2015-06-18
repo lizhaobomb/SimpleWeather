@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		041CA8BA1B31C2A900954CAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CA8B91B31C2A900954CAE /* main.m */; };
 		041CA8BD1B31C2A900954CAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CA8BC1B31C2A900954CAE /* AppDelegate.m */; };
-		041CA8C01B31C2A900954CAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CA8BF1B31C2A900954CAE /* ViewController.m */; };
 		041CA8C51B31C2A900954CAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041CA8C41B31C2A900954CAE /* Images.xcassets */; };
 		041CA8C81B31C2A900954CAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041CA8C61B31C2A900954CAE /* LaunchScreen.xib */; };
 		041CA8D41B31C2A900954CAE /* SimpleWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 041CA8D31B31C2A900954CAE /* SimpleWeatherTests.m */; };
@@ -63,8 +62,6 @@
 		041CA8B91B31C2A900954CAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		041CA8BB1B31C2A900954CAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		041CA8BC1B31C2A900954CAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		041CA8BE1B31C2A900954CAE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		041CA8BF1B31C2A900954CAE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		041CA8C41B31C2A900954CAE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		041CA8C71B31C2A900954CAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		041CA8CD1B31C2A900954CAE /* SimpleWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,8 +162,6 @@
 				041CA8E61B31C30700954CAE /* WXClient.m */,
 				041CA8BB1B31C2A900954CAE /* AppDelegate.h */,
 				041CA8BC1B31C2A900954CAE /* AppDelegate.m */,
-				041CA8BE1B31C2A900954CAE /* ViewController.h */,
-				041CA8BF1B31C2A900954CAE /* ViewController.m */,
 				041CA8EC1B31C32C00954CAE /* Images */,
 				041CA8C41B31C2A900954CAE /* Images.xcassets */,
 				041CA8C61B31C2A900954CAE /* LaunchScreen.xib */,
@@ -421,7 +416,6 @@
 			files = (
 				041CA8E91B31C30700954CAE /* WXManager.m in Sources */,
 				041CA8EA1B31C30700954CAE /* WXDailyForecast.m in Sources */,
-				041CA8C01B31C2A900954CAE /* ViewController.m in Sources */,
 				041CA8EB1B31C30700954CAE /* WXClient.m in Sources */,
 				041CA8BD1B31C2A900954CAE /* AppDelegate.m in Sources */,
 				041CA8E71B31C30700954CAE /* WXCondition.m in Sources */,
