@@ -62,6 +62,7 @@
 #define MPS_TO_MPH 2.23694f
 
 + (NSValueTransformer *)windSpeedJSONTransformer {
+
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSNumber *num) {
         return @(num.floatValue*MPS_TO_MPH);
     } reverseBlock:^(NSNumber *speed) {
@@ -70,11 +71,13 @@
 }
 
 + (NSValueTransformer *)conditionDescriptionJSONTransformer {
+
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray *values) {
         return [values firstObject];
     } reverseBlock:^(NSString *str) {
         return @[str];
     }];
+
 }
 
 + (NSValueTransformer *)conditionJSONTransformer {
