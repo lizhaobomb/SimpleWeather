@@ -126,7 +126,7 @@
       deliverOn:RACScheduler.mainThreadScheduler]
      subscribeNext:^(WXCondition *newCondition) {
          temperatureLabel.text = [NSString stringWithFormat:@"%.0f°",newCondition.temperature.floatValue];
-         conditionsLabel.text = [newCondition.condition capitalizedString];
+         conditionsLabel.text = [newCondition.condition[0][@"main"] capitalizedString];
          cityLabel.text = [newCondition.locationName capitalizedString];
          
          iconView.image = [UIImage imageNamed:[newCondition imageName]];

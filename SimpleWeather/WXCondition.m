@@ -38,7 +38,7 @@
 }
 
 - (NSString *)imageName {
-    return [WXCondition imageMap][self.icon];
+    return [WXCondition imageMap][self.icon[0][@"icon"]];
 }
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
@@ -51,9 +51,9 @@
              @"tempLow": @"main.temp_min",
              @"sunrise": @"sys.sunrise",
              @"sunset": @"sys.sunset",
-             @"conditionDescription": @"weather.description",
-             @"condition": @"weather.main",
-             @"icon": @"weather.icon",
+             @"conditionDescription": @"weather",
+             @"condition": @"weather",
+             @"icon": @"weather",
              @"windBearing": @"wind.deg",
              @"windSpeed": @"wind.speed",
              };
@@ -62,7 +62,6 @@
 #define MPS_TO_MPH 2.23694f
 
 + (NSValueTransformer *)windSpeedJSONTransformer {
-
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSNumber *num) {
         return @(num.floatValue*MPS_TO_MPH);
     } reverseBlock:^(NSNumber *speed) {
@@ -70,23 +69,27 @@
     }];
 }
 
-+ (NSValueTransformer *)conditionDescriptionJSONTransformer {
-
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray *values) {
-        return [values firstObject];
-    } reverseBlock:^(NSString *str) {
-        return @[str];
-    }];
-
-}
-
-+ (NSValueTransformer *)conditionJSONTransformer {
-    return [self conditionDescriptionJSONTransformer];
-}
-
-+ (NSValueTransformer *)iconJSONTransformer {
-    return [self conditionDescriptionJSONTransformer];
-}
+//+ (NSValueTransformer *)conditionDescriptionJSONTransformer {
+//
+//    id (^forwordBlock)(id) = ^(NSArray *values) {
+//        return [values firstObject];
+//    };
+//    
+//    id (^reverseBlock)(id)= ^(NSString *str) {
+//        return @[str];
+//    };
+//    
+//    return [MTLValueTransformer reversibleTransformerWithForwardBlock:forwordBlock reverseBlock:reverseBlock];
+//
+//}
+//
+//+ (NSValueTransformer *)conditionJSONTransformer {
+//    return [self conditionDescriptionJSONTransformer];
+//}
+//
+//+ (NSValueTransformer *)iconJSONTransformer {
+//    return [self conditionDescriptionJSONTransformer];
+//}
 
 + (NSValueTransformer *)dateJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {

@@ -81,7 +81,9 @@
         
         // Use a function to map results from JSON to Mantle objects
         return [[list map:^(NSDictionary *item) {
-            id none = [MTLJSONAdapter modelOfClass:[WXCondition class] fromJSONDictionary:item error:nil];
+            NSError *error = nil;
+
+            id none = [MTLJSONAdapter modelOfClass:[WXCondition class] fromJSONDictionary:item error:&error];
 
             return none;
         }] array];
@@ -96,8 +98,9 @@
         RACSequence *list = [json[@"list"] rac_sequence];
         
         return [[list map:^(NSDictionary *item) {
+            NSError *error = nil;
 
-            id none = [MTLJSONAdapter modelOfClass:[WXCondition class] fromJSONDictionary:item error:nil];
+            id none = [MTLJSONAdapter modelOfClass:[WXCondition class] fromJSONDictionary:item error:&error];
 
             return none;
         }] array];
